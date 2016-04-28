@@ -12,6 +12,7 @@ public:
 	virtual void placeCard(vector<Card>& hand, vector<Pile>& piles);
 	int getInput(string prompt);
 	void doneChoosing(bool& choosing);
+	void quit(string prompt);
 	bool checkValidCard(Pile pile, Card card);
 private:
 

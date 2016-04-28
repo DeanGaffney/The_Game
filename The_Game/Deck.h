@@ -8,7 +8,7 @@ class Deck{
 public:
 	Deck();
 	~Deck();
-	void addCard(Card card);
+	void addCard(Card& card);
 	void populateDeck();
 	void printDeck();
 	void drawNumberOfCards(int numberToDraw);

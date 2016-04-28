@@ -22,19 +22,19 @@ Deck::~Deck(){
 	m_Cards = nullptr;
 }
 
-void Deck::addCard(Card cardToAdd){
+void Deck::addCard(Card& cardToAdd){
 	m_Cards->push_back(cardToAdd);	
 }
 
 //populate the deck full of cards
 void Deck::populateDeck(){
 	for (int i = 2; i < 100; ++i){
-		Card card(i);
-		addCard(card);
+		Card *card = new Card(i);
+		addCard(*card);
 	}
 }
 
-void Deck::printDeck(){									//print out the deck
+void Deck::printDeck(){										//print out the deck
 	for (int i = 0; i < m_Cards->size(); ++i)
 		cout << m_Cards->at(i).getValue() << "\n";
 }

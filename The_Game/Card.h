@@ -13,13 +13,15 @@ public:
 	void setValue(int value);
 	int getCardPrecedence();
 	void setCardPrecedence(int precedence);
+	void setPileNumber(int number);
+	int getPileNumber();
 	bool operator<(const Card& other)const{
 		if (cardPrecedence == other.cardPrecedence)
 		{
-			return cardPrecedence < other.cardPrecedence;
+			return cardPrecedence > other.cardPrecedence;
 		}
 
-		return cardPrecedence < other.cardPrecedence;
+		return cardPrecedence > other.cardPrecedence;
 	}
 
 	friend ostream& operator<<(ostream& stream, const Card& card){
@@ -29,6 +31,7 @@ public:
 		
 
 private:
+	int pileNumber;
 	int m_cardValue;
 	int cardPrecedence;
 	int maxPrecedence = 6;
